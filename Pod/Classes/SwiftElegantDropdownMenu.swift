@@ -123,7 +123,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         self._titleText = "Title"
         super.init(coder: aDecoder)
@@ -132,7 +132,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    override func setNeedsLayout() {
+    override public func setNeedsLayout() {
         
         super.setNeedsLayout()
         
