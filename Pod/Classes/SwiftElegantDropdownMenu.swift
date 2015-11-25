@@ -46,7 +46,7 @@ public class SwiftElegantDropdownMenu : UIView {
     
     public var onItemSelect: ((index: Int, item: AnyObject?) -> ())?
     
-    var items : [String]? {
+    public var items : [String]? {
         get {
             return self._items
         } set (value) {
@@ -55,7 +55,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
     }
     
-    var configuration : SwiftElegantDropdownMenuConfiguration! {
+    public var configuration : SwiftElegantDropdownMenuConfiguration! {
         get {
             return self._configuration
         } set(value){
@@ -64,7 +64,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
     }
     
-    var title: String? {
+    public var title: String? {
         get {
             return self._titleText
         } set(value) {
@@ -74,31 +74,35 @@ public class SwiftElegantDropdownMenu : UIView {
     }
     
     //available initializers
-    convenience init(title: String, items: [String]) {
+    convenience public init(title: String, items: [String]) {
         self.init(title: title, items: items, frame: nil, configuration: nil)
     }
     
-    convenience init(title: String, items: [String], wrapper: UIView?) {
+    convenience public init(title: String, items: [String], wrapper: UIView?) {
         self.init(title: title, items: items, frame: nil, configuration: nil)
         self.wrapper = wrapper
     }
     
-    convenience init(title: String, items: [String], frame: CGRect?) {
+    convenience public init(title: String, items: [String], frame: CGRect?) {
         self.init(title: title, items: items, frame: frame, configuration: nil)
     }
     
-    convenience init(title: String, items: [String], frame: CGRect?, wrapper: UIView?) {
+    convenience public init(title: String, items: [String], frame: CGRect?, wrapper: UIView?) {
         self.init(title: title, items: items, frame: frame, configuration: nil)
         self.wrapper = wrapper
     }
     
-    convenience init(title: String, items: [String], configuration: SwiftElegantDropdownMenuConfiguration?) {
+    convenience public init(title: String, items: [String], configuration: SwiftElegantDropdownMenuConfiguration?) {
         self.init(title: title, items: items, frame: nil, configuration: configuration)
     }
     
-    convenience init(title: String, items: [String], configuration: SwiftElegantDropdownMenuConfiguration?, wrapper: UIView?) {
+    convenience public init(title: String, items: [String], configuration: SwiftElegantDropdownMenuConfiguration?, wrapper: UIView?) {
         self.init(title: title, items: items, frame: nil, configuration: configuration)
         self.wrapper = wrapper
+    }
+    
+    override public init(frame: CGRect){
+        super.init(frame: frame)
     }
     
     init(title: String, items: [String], frame: CGRect?, configuration: SwiftElegantDropdownMenuConfiguration?) {
@@ -123,7 +127,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         self._titleText = "Title"
         super.init(coder: aDecoder)
@@ -132,7 +136,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    override func setNeedsLayout() {
+    override public func setNeedsLayout() {
         
         super.setNeedsLayout()
         
@@ -385,7 +389,7 @@ public class SwiftElegantDropdownMenu : UIView {
 }
 
 //defines the looks and feels of the dropdown
-class SwiftElegantDropdownMenuConfiguration {
+public class SwiftElegantDropdownMenuConfiguration {
     
     private var context : SwiftElegantDropdownMenu?
     
@@ -417,7 +421,7 @@ class SwiftElegantDropdownMenuConfiguration {
     private var _dropdownIconWillRotate: Bool!
     
     //returns a prepopulated configuration set
-    static func getDefaultConfiguration(context: SwiftElegantDropdownMenu) -> SwiftElegantDropdownMenuConfiguration{
+    static public func getDefaultConfiguration(context: SwiftElegantDropdownMenu) -> SwiftElegantDropdownMenuConfiguration{
         
         let configuration = SwiftElegantDropdownMenuConfiguration(context: context)
         
@@ -460,7 +464,7 @@ class SwiftElegantDropdownMenuConfiguration {
 extension SwiftElegantDropdownMenuConfiguration {
     
     //attributes for the header of the dropdown
-    var headerBackgroundColor: UIColor {
+    public var headerBackgroundColor: UIColor {
         get {
             return self._headerBackgroundColor
         } set(value){
@@ -470,7 +474,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var headerViewHeight: CGFloat? {
+    public var headerViewHeight: CGFloat? {
         get {
             return self._headerViewHeight
         } set(value){
@@ -482,7 +486,7 @@ extension SwiftElegantDropdownMenuConfiguration {
     }
     
     //attributes for the title (selected item)
-    var titleColor : UIColor {
+    public var titleColor : UIColor {
         get {
             return self._titleColor
         } set(value) {
@@ -492,7 +496,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var titleFont: UIFont {
+    public var titleFont: UIFont {
         get {
             return self._titleFont
         } set(value){
@@ -504,7 +508,7 @@ extension SwiftElegantDropdownMenuConfiguration {
     }
     
     //attributes for the dropdown list items
-    var cellHeight : CGFloat {
+    public var cellHeight : CGFloat {
         get {
             return self._cellHeight
         } set(value){
@@ -514,7 +518,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var animationDuration: NSTimeInterval {
+    public var animationDuration: NSTimeInterval {
         get {
             return self._animationDuration
         } set(value){
@@ -524,7 +528,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListBackgroundColor: UIColor {
+    public var dropdownListBackgroundColor: UIColor {
         get {
             return self._dropdownListBackgroundColor
         } set(value){
@@ -534,7 +538,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var cellFont: UIFont {
+    public var cellFont: UIFont {
         get {
             return self._cellFont
         } set(value){
@@ -544,7 +548,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var cellTextColor: UIColor {
+    public var cellTextColor: UIColor {
         get {
             return self._cellTextColor
         } set(value){
@@ -554,7 +558,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListBorderColor: UIColor {
+    public var dropdownListBorderColor: UIColor {
         get {
             return self._dropdownListBorderColor
         } set(value){
@@ -564,7 +568,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListBorderWidth: CGFloat {
+    public var dropdownListBorderWidth: CGFloat {
         get {
             return self._dropdownListBorderWidth
         } set(value){
@@ -574,7 +578,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListMaxHeight: CGFloat {
+    public var dropdownListMaxHeight: CGFloat {
         get {
             return self._dropdownListMaxHeight
         } set(value){
@@ -584,7 +588,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListSelectedItemIndex: Int {
+    public var dropdownListSelectedItemIndex: Int {
         get {
             return self._dropdownListSelectedItemIndex
         } set(value){
@@ -594,7 +598,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListSelectedItemBackgroundColor: UIColor {
+    public var dropdownListSelectedItemBackgroundColor: UIColor {
         get {
             return self._dropdownListSelectedItemBackgroundColor
         } set(value){
@@ -604,7 +608,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             }
         }
     }
-    var dropdownListSelectedItemAccessoryType: UITableViewCellAccessoryType {
+    public var dropdownListSelectedItemAccessoryType: UITableViewCellAccessoryType {
         get {
             return self._dropdownListSelectedItemAccessoryType
         } set(value){
@@ -616,7 +620,7 @@ extension SwiftElegantDropdownMenuConfiguration {
     }
     
     //dropdown icon
-    var dropdownIconAssetName: String? {
+    public var dropdownIconAssetName: String? {
         get {
             return self._dropdownIconAssetName
         } set(value){
@@ -627,7 +631,7 @@ extension SwiftElegantDropdownMenuConfiguration {
         }
     }
     
-    var dropdownIconWillRotate: Bool {
+    public var dropdownIconWillRotate: Bool {
         get {
             return self._dropdownIconWillRotate
         } set(value){

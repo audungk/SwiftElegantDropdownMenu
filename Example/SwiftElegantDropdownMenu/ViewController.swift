@@ -11,13 +11,10 @@ import SwiftElegantDropdownMenu
 
 class ViewController: UIViewController {
     
-    var dropdownMenu: SwiftElegantDropdownMenu!
+    @IBOutlet weak var dropdownMenu: SwiftElegantDropdownMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.dropdownMenu = SwiftElegantDropdownMenu(frame: CGRectMake(self.view.frame.width / 2, 30, 120, 40))
-        self.view.addSubview(self.dropdownMenu)
         
         let items = ["Zeus", "Hades", "Poseidon", "Chronos", "Aphrodite", "Artemis", "Hefestus"]
         self.dropdownMenu.title = items.first!

@@ -1,10 +1,14 @@
 PODS:
-  - SwiftElegantDropdownMenu (0.1.0)
+  - SwiftElegantDropdownMenu (0.1.1)
 
 DEPENDENCIES:
-  - SwiftElegantDropdownMenu
+  - SwiftElegantDropdownMenu (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftElegantDropdownMenu:
+    :path: ../
 
 SPEC CHECKSUMS:
-  SwiftElegantDropdownMenu: 742e00521dd05b232a6aa508f32d1fca8ebcdeb3
+  SwiftElegantDropdownMenu: 42191498b5d6059d6766564d200df8225fb3bbfc
 
 COCOAPODS: 0.39.0
