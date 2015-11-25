@@ -30,7 +30,7 @@
 
 import UIKit
 
-class SwiftElegantDropdownMenu : UIView {
+public class SwiftElegantDropdownMenu : UIView {
     
     private var _configuration  : SwiftElegantDropdownMenuConfiguration?
     private var _title : UILabel?
@@ -44,7 +44,7 @@ class SwiftElegantDropdownMenu : UIView {
     private var _selectedItem: String?
     private var _dropdownIcon: UIImageView?
     
-    internal var onItemSelect: ((index: Int, item: AnyObject?) -> ())?
+    public var onItemSelect: ((index: Int, item: AnyObject?) -> ())?
     
     var items : [String]? {
         get {
@@ -155,7 +155,7 @@ class SwiftElegantDropdownMenu : UIView {
     }
     
     //renders the dropdown view
-    internal func renderDropdownView() {
+    public func renderDropdownView() {
         
         if let _title = self._title {
             if _title.isDescendantOfView(self){
