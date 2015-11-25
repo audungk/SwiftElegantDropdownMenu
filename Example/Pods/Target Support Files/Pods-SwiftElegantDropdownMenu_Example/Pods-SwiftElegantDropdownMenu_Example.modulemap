@@ -1,0 +1,6 @@
+framework module Pods_SwiftElegantDropdownMenu_Example {
+  umbrella header "Pods-SwiftElegantDropdownMenu_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

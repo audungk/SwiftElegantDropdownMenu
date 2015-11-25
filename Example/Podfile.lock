@@ -1,0 +1,14 @@
+PODS:
+  - SwiftElegantDropdownMenu (0.1.0)
+
+DEPENDENCIES:
+  - SwiftElegantDropdownMenu (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftElegantDropdownMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftElegantDropdownMenu: 742e00521dd05b232a6aa508f32d1fca8ebcdeb3
+
+COCOAPODS: 0.39.0
