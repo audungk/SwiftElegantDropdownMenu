@@ -2,11 +2,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'SwiftElegantDropdownMenu_Example', :exclusive => true do
-  pod "SwiftElegantDropdownMenu", :path => "../"
+  pod "SwiftElegantDropdownMenu"
 end
 
 target 'SwiftElegantDropdownMenu_Tests', :exclusive => true do
-  pod "SwiftElegantDropdownMenu", :path => "../"
+  pod "SwiftElegantDropdownMenu"
 
   
 end
