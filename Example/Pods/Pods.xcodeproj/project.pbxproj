@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		3A01F8ABEE3EB3FC68470124ED33F7E9 /* Pods-SwiftElegantDropdownMenu_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5F8B4840294F15EE8A668133CB9CF70 /* Pods-SwiftElegantDropdownMenu_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D078FE0F42BB93BF8521653C4A6DD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		71B918823218C6494F809168330422F0 /* SwiftElegantDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE408D65FB50EDC48ED4D0E628CCC3 /* SwiftElegantDropdownMenu.swift */; };
-		7C5688E557EB939FBE456AE28D465EE9 /* SwiftElegantDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B248160C6C91B4BA75199567E33F2B /* SwiftElegantDropdownMenu-dummy.m */; };
+		81655C571275CF8ABA1B57FB77444867 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 806F9281906630BF3E528E58FB0134AA /* arrow.png */; };
 		820723520EDEB5F9C1B01C8CC67B6460 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		8AEB2AFA84726DCC600E792FF3E58815 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		90AB71748B3DE810E99D3CE84A06EB31 /* Pods-SwiftElegantDropdownMenu_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4146E7DA20E31F100524F27E45BACAD2 /* Pods-SwiftElegantDropdownMenu_Tests-dummy.m */; };
-		B9D0ACB06B880D772DCAB7AA8D8F7D81 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D046A02173DD4EDF1E69E37FFB1EF8 /* arrow.png */; };
-		BA07FE0B29279A97959ECE461E6F29C4 /* SwiftElegantDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5EDB09CF867E85C1EC3F27DEDBF187E /* SwiftElegantDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E90854316CF1B59146C47A7BF1DDF73 /* SwiftElegantDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C055A9645A7BF93F8E8EC685AD5275 /* SwiftElegantDropdownMenu.swift */; };
+		BA07FE0B29279A97959ECE461E6F29C4 /* SwiftElegantDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8344E213C8A2E32B32EBEC658F38C3C /* SwiftElegantDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5D663D98733AC5A84BFB1BA122396D9 /* Pods-SwiftElegantDropdownMenu_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA3822DD47BADA4E522A0A48ADAB81F8 /* Pods-SwiftElegantDropdownMenu_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C66FFDEB231144AAAC8DC903F8CA7536 /* SwiftElegantDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33D10012E24E8F7360CE17CF1E723514 /* SwiftElegantDropdownMenu.bundle */; };
+		C6C3BDD14EB594B32EF3C968497E712B /* SwiftElegantDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4220738948D5397B582DCC796C521 /* SwiftElegantDropdownMenu-dummy.m */; };
 		D70440F64EE43E2D6F6DEDB9A97998B2 /* Pods-SwiftElegantDropdownMenu_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6AAFC0A21CAA03C5D72845FAC4A53 /* Pods-SwiftElegantDropdownMenu_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -49,36 +49,36 @@
 		18BA64B58627E4E4ECF958F2FFA1CBB0 /* SwiftElegantDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftElegantDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		192AB28146C4288436DE9CD477E5F32A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2204059C8BC003D514D01431D894083A /* Pods-SwiftElegantDropdownMenu_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftElegantDropdownMenu_Example-frameworks.sh"; sourceTree = "<group>"; };
-		2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftElegantDropdownMenu.xcconfig; sourceTree = "<group>"; };
 		26C6AAFC0A21CAA03C5D72845FAC4A53 /* Pods-SwiftElegantDropdownMenu_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftElegantDropdownMenu_Example-dummy.m"; sourceTree = "<group>"; };
 		28087C082678F020AE671FE42E7D0553 /* Pods-SwiftElegantDropdownMenu_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftElegantDropdownMenu_Tests.modulemap"; sourceTree = "<group>"; };
+		29C055A9645A7BF93F8E8EC685AD5275 /* SwiftElegantDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftElegantDropdownMenu.swift; sourceTree = "<group>"; };
 		2D62E6CB686C92D6A79BDAA9DF99E804 /* Pods-SwiftElegantDropdownMenu_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftElegantDropdownMenu_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		33D10012E24E8F7360CE17CF1E723514 /* SwiftElegantDropdownMenu.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftElegantDropdownMenu.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4146E7DA20E31F100524F27E45BACAD2 /* Pods-SwiftElegantDropdownMenu_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftElegantDropdownMenu_Tests-dummy.m"; sourceTree = "<group>"; };
 		433EC065D936A7EDF4943E824BB12C10 /* Pods-SwiftElegantDropdownMenu_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftElegantDropdownMenu_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		43C0C0A0BC262FCFF77989326B4F615A /* SwiftElegantDropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftElegantDropdownMenu-prefix.pch"; sourceTree = "<group>"; };
 		599316E246843208203A9869EA6DD4F9 /* Pods_SwiftElegantDropdownMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftElegantDropdownMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DDE408D65FB50EDC48ED4D0E628CCC3 /* SwiftElegantDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftElegantDropdownMenu.swift; path = Pod/Classes/SwiftElegantDropdownMenu.swift; sourceTree = "<group>"; };
 		6FCD4691FBFE59B7206B1BE15A22F1F2 /* Pods-SwiftElegantDropdownMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftElegantDropdownMenu_Example.modulemap"; sourceTree = "<group>"; };
-		80EED01CC2B331685D1C7A48FF0A35CD /* SwiftElegantDropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftElegantDropdownMenu-prefix.pch"; sourceTree = "<group>"; };
+		806F9281906630BF3E528E58FB0134AA /* arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		8B4360FD7532AEAB2FC44E610333C1CD /* Pods-SwiftElegantDropdownMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftElegantDropdownMenu_Example-resources.sh"; sourceTree = "<group>"; };
+		8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftElegantDropdownMenu.xcconfig; sourceTree = "<group>"; };
 		A5F8B4840294F15EE8A668133CB9CF70 /* Pods-SwiftElegantDropdownMenu_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftElegantDropdownMenu_Example-umbrella.h"; sourceTree = "<group>"; };
 		A6F9F3C75C84D6E2F54236C655830917 /* Pods_SwiftElegantDropdownMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftElegantDropdownMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0A06FD7F1EF6200168145E166FCE8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF4220738948D5397B582DCC796C521 /* SwiftElegantDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftElegantDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		B78970AA0EBB3B65817998287E84EA48 /* Pods-SwiftElegantDropdownMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftElegantDropdownMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B7EFE826A63B94DB9C9583820123B436 /* Pods-SwiftElegantDropdownMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftElegantDropdownMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B85643E596E64AD1408D9B4BE6E264B0 /* Pods-SwiftElegantDropdownMenu_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftElegantDropdownMenu_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA7FBED60CDFB6AB0677C764DDF909A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1F23B72526A12E3BA9DF0FCE8C5EB8B /* SwiftElegantDropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftElegantDropdownMenu.modulemap; sourceTree = "<group>"; };
-		D6D046A02173DD4EDF1E69E37FFB1EF8 /* arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = arrow.png; path = Pod/Assets/arrow.png; sourceTree = "<group>"; };
 		D6E660AF7A87023E89208068C4B85880 /* Pods-SwiftElegantDropdownMenu_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftElegantDropdownMenu_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D8344E213C8A2E32B32EBEC658F38C3C /* SwiftElegantDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftElegantDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
 		D99A4DAF15FD1E3F40477190388DA698 /* Pods-SwiftElegantDropdownMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftElegantDropdownMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE6ACAFDFF7664A7E43BD37FB238FCCF /* SwiftElegantDropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftElegantDropdownMenu.modulemap; sourceTree = "<group>"; };
 		EA3822DD47BADA4E522A0A48ADAB81F8 /* Pods-SwiftElegantDropdownMenu_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftElegantDropdownMenu_Tests-umbrella.h"; sourceTree = "<group>"; };
-		F1D5D3A06264C876C825CCF79C3537A7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F260ABA62320D61C245F34F3D97BFCD3 /* Pods-SwiftElegantDropdownMenu_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftElegantDropdownMenu_Tests-resources.sh"; sourceTree = "<group>"; };
-		F5EDB09CF867E85C1EC3F27DEDBF187E /* SwiftElegantDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftElegantDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
 		F929125259B6A2CD212FF7321100CE73 /* Pods-SwiftElegantDropdownMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftElegantDropdownMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F9B248160C6C91B4BA75199567E33F2B /* SwiftElegantDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftElegantDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		FE89E573F68D1A7D208EC916AB37C3C7 /* Pods-SwiftElegantDropdownMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftElegantDropdownMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7C67247C1532816D5A71F60760C228 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BB65428AC729DF0BF4A2331B06DD2BE /* Pod */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		333F1EA9AF149891502902EA62D3D159 /* Pods-SwiftElegantDropdownMenu_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,34 +143,44 @@
 			path = "Target Support Files/Pods-SwiftElegantDropdownMenu_Example";
 			sourceTree = "<group>";
 		};
-		5033CB594DF6185270F35CF99A02B367 /* Pods */ = {
+		5CBD7AE7DEAA91B619897CA51DF44DD9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4654793E8DE84DC30D0B2064E0A6337 /* SwiftElegantDropdownMenu */,
+				CDF8B92C7F09B0B886240CE1FB61DCDD /* SwiftElegantDropdownMenu */,
 			);
-			name = Pods;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		6383874FD7EC79C36DEDE58EF3693607 /* Support Files */ = {
+		6388BE6F3FB1959F5162C4B0702F9C7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F1D5D3A06264C876C825CCF79C3537A7 /* Info.plist */,
-				D1F23B72526A12E3BA9DF0FCE8C5EB8B /* SwiftElegantDropdownMenu.modulemap */,
-				2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */,
-				F9B248160C6C91B4BA75199567E33F2B /* SwiftElegantDropdownMenu-dummy.m */,
-				80EED01CC2B331685D1C7A48FF0A35CD /* SwiftElegantDropdownMenu-prefix.pch */,
-				F5EDB09CF867E85C1EC3F27DEDBF187E /* SwiftElegantDropdownMenu-umbrella.h */,
+				29C055A9645A7BF93F8E8EC685AD5275 /* SwiftElegantDropdownMenu.swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftElegantDropdownMenu";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		77700A0FA214109F5713AE3C0A8BF6E7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				806F9281906630BF3E528E58FB0134AA /* arrow.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7BB65428AC729DF0BF4A2331B06DD2BE /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				77700A0FA214109F5713AE3C0A8BF6E7 /* Assets */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				5CBD7AE7DEAA91B619897CA51DF44DD9 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5033CB594DF6185270F35CF99A02B367 /* Pods */,
 				DF4CF6A102291C32C3FBD94451F78E9D /* Products */,
 				A54880A86165C61067DA9F8B8E7CFABA /* Targets Support Files */,
 			);
@@ -186,14 +204,12 @@
 			path = "Target Support Files/Pods-SwiftElegantDropdownMenu_Tests";
 			sourceTree = "<group>";
 		};
-		A4654793E8DE84DC30D0B2064E0A6337 /* SwiftElegantDropdownMenu */ = {
+		A190C4A160D7097D28644E5490C2724F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6DDE408D65FB50EDC48ED4D0E628CCC3 /* SwiftElegantDropdownMenu.swift */,
-				F50B8977FC6B43986C7EEAF3A819EC7D /* Resources */,
-				6383874FD7EC79C36DEDE58EF3693607 /* Support Files */,
+				6388BE6F3FB1959F5162C4B0702F9C7E /* Classes */,
 			);
-			path = SwiftElegantDropdownMenu;
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		A54880A86165C61067DA9F8B8E7CFABA /* Targets Support Files */ = {
@@ -203,6 +219,20 @@
 				8CD61C0A473164C888FD676B49174CD1 /* Pods-SwiftElegantDropdownMenu_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A760BCA315571C3E4BFBF5E4DE72A7CC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A06FD7F1EF6200168145E166FCE8E /* Info.plist */,
+				DE6ACAFDFF7664A7E43BD37FB238FCCF /* SwiftElegantDropdownMenu.modulemap */,
+				8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */,
+				ABF4220738948D5397B582DCC796C521 /* SwiftElegantDropdownMenu-dummy.m */,
+				43C0C0A0BC262FCFF77989326B4F615A /* SwiftElegantDropdownMenu-prefix.pch */,
+				D8344E213C8A2E32B32EBEC658F38C3C /* SwiftElegantDropdownMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftElegantDropdownMenu";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -221,6 +251,17 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CDF8B92C7F09B0B886240CE1FB61DCDD /* SwiftElegantDropdownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A190C4A160D7097D28644E5490C2724F /* Pod */,
+				0C7C67247C1532816D5A71F60760C228 /* Resources */,
+				A760BCA315571C3E4BFBF5E4DE72A7CC /* Support Files */,
+			);
+			name = SwiftElegantDropdownMenu;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		DF4CF6A102291C32C3FBD94451F78E9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +271,6 @@
 				18BA64B58627E4E4ECF958F2FFA1CBB0 /* SwiftElegantDropdownMenu.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F50B8977FC6B43986C7EEAF3A819EC7D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D6D046A02173DD4EDF1E69E37FFB1EF8 /* arrow.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FF2C5AD230C7DC87609C9E9A01ECCE2 /* Build configuration list for PBXNativeTarget "SwiftElegantDropdownMenu" */;
 			buildPhases = (
-				DD7B1CFC2830FECF2505D29FE8F535DC /* Sources */,
+				C1D1559AB3F287071C17BE04F856ABD4 /* Sources */,
 				081FBA1D624483B0E583331F3CD414DD /* Frameworks */,
 				32A2EF2AD1B6185A8204BC6BFE82E255 /* Resources */,
 				F62280E6D73A167ABFF0820B3313450F /* Headers */,
@@ -331,7 +364,7 @@
 			buildPhases = (
 				AE8948519AAA061BA804A2DE05AB17BF /* Sources */,
 				0ACD40A4B00596BC725756307C28AEDB /* Frameworks */,
-				860317EC84DF076BD16616A8C4B00CDC /* Resources */,
+				3B4D4BB498DA9F43F965FE24155366F7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -380,11 +413,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		860317EC84DF076BD16616A8C4B00CDC /* Resources */ = {
+		3B4D4BB498DA9F43F965FE24155366F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D0ACB06B880D772DCAB7AA8D8F7D81 /* arrow.png in Resources */,
+				81655C571275CF8ABA1B57FB77444867 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,12 +447,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7B1CFC2830FECF2505D29FE8F535DC /* Sources */ = {
+		C1D1559AB3F287071C17BE04F856ABD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C5688E557EB939FBE456AE28D465EE9 /* SwiftElegantDropdownMenu-dummy.m in Sources */,
-				71B918823218C6494F809168330422F0 /* SwiftElegantDropdownMenu.swift in Sources */,
+				C6C3BDD14EB594B32EF3C968497E712B /* SwiftElegantDropdownMenu-dummy.m in Sources */,
+				9E90854316CF1B59146C47A7BF1DDF73 /* SwiftElegantDropdownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +482,7 @@
 /* Begin XCBuildConfiguration section */
 		0A263FDE59B08E931A081A5C00E94566 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */;
+			baseConfigurationReference = 8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -610,7 +643,7 @@
 		};
 		7BD42B025903B8CD6EC810AF7115357D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */;
+			baseConfigurationReference = 8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SwiftElegantDropdownMenu;
@@ -622,7 +655,7 @@
 		};
 		A6A76E050A6254AB329721F7C1FA0BBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */;
+			baseConfigurationReference = 8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SwiftElegantDropdownMenu;
@@ -634,7 +667,7 @@
 		};
 		B7B179CB23EE64881ABCBBA2F470AA3E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2548E42464D9F1EC4C5B816157C0984A /* SwiftElegantDropdownMenu.xcconfig */;
+			baseConfigurationReference = 8C60DC2DD9AD74BAD61F8C65106C929B /* SwiftElegantDropdownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
