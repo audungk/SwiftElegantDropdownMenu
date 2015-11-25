@@ -9,7 +9,9 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Description
+
+This component provides an easy, configurable dropdown menu with the ability to place it anywhere. It comes with a simple item selected callback and a variety of configurable options. This component is inspired by the **BTNavigationDropdownMenu** from **PhamBaTho**.
 
 ## Installation
 
