@@ -1,6 +1,6 @@
 # SwiftElegantDropdownMenu
 
-[![CI Status](http://img.shields.io/travis/Armin Likic/SwiftElegantDropdownMenu.svg?style=flat)](https://travis-ci.org/Armin Likic/SwiftElegantDropdownMenu)
+#[![CI Status](http://img.shields.io/travis/Armin Likic/SwiftElegantDropdownMenu.svg?style=flat)](https://travis-ci.org/Armin Likic/SwiftElegantDropdownMenu)
 [![Version](https://img.shields.io/cocoapods/v/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
 [![License](https://img.shields.io/cocoapods/l/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
@@ -16,9 +16,10 @@ This component provides an easy, configurable dropdown menu with the ability to 
 ## Installation
 
 SwiftElegantDropdownMenu is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following lines to your Podfile:
 
 ```ruby
+use_frameworks!
 pod "SwiftElegantDropdownMenu"
 ```
 
@@ -45,6 +46,26 @@ Assign the **items** and **title** properties to it:
 ```swift
 self.dropdownMenu.items = items
 self.dropdownMenu.title = items.first!
+```
+
+### Example 3
+You can handle the selection using a completion handler:
+```swift
+self.dropdownMenu.onItemSelect = {
+
+(index, item) -> () in
+
+// do something
+
+}
+```
+Also, you have the freedom to customize the layout of the dropdown to match your needs:
+```swift
+...
+self.dropdownMenu.configuration.titleFont = UIFont(name: "Arial", size: 22)!
+self.dropdownMenu.configuration.cellTextColor = UIColor.redColor()
+self.dropdownMenu.configuration.cellFont = UIFont(name: "Courier New", size: 18)!
+...
 ```
 
 ## Author
