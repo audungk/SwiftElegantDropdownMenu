@@ -26,7 +26,7 @@ Start by creating an array of **dropdown elements**:
 ```swift
 let items = ["Zeus", "Hades", "Poseidon", "Chronos", "Aphrodite", "Artemis", "Hefestus"]
 ```
-Create a **new instance** of SwiftElegantDropdownMenu:
+Create a new instance of **SwiftElegantDropdownMenu**:
 ```swift
 let dropdownMenu = SwiftElegantDropdownMenu(title: items.first!, items: items)
 ```
@@ -35,7 +35,7 @@ Add the menu to your view as any other UIVIew:
 self.view.addSubview(dropdownMenu)
 ```
 ### Example 2
-Create a new UIView storyboard element and assign the **SwiftElegantDropdownMenu** class to it, and create an outlet in your viewcontroller.
+Create a new UIView storyboard element, assign the **SwiftElegantDropdownMenu** class to it, and create an outlet in your viewcontroller:
 ```swift
 @IBOutlet weak var dropdownMenu: SwiftElegantDropdownMenu!
 ```
