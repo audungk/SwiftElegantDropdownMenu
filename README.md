@@ -67,6 +67,11 @@ self.dropdownMenu.configuration.cellFont = UIFont(name: "Courier New", size: 18)
 ...
 ```
 
+## Changelog
+
+**0.1.3 (11-27-2015)**
+- The issue that was causing the app to crash when multiple dropdowns have been added on the view has been resolved.
+
 ## Author
 
 Armin Likic, armin-likic@live.com
