@@ -108,6 +108,7 @@ public class SwiftElegantDropdownMenu : UIView {
     init(title: String, items: [String], frame: CGRect?, configuration: SwiftElegantDropdownMenuConfiguration?) {
         
         self._titleText = title
+        self._items = items
         
         var _frame = CGRectMake(0, 0, 300, 100)
         
@@ -185,7 +186,6 @@ public class SwiftElegantDropdownMenu : UIView {
         self._title?.center = CGPointMake(self.frame.width / 2, self._title!.frame.height / 2)
         
         self._menuButton = UIButton(frame: buttonFrame)
-        self._menuButton.addTarget(self, action: "menuButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(self._menuButton)
         self._menuButton.addSubview(self._title!)
@@ -213,6 +213,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
         
         self.setNeedsLayout()
+        self._menuButton.addTarget(self, action: "menuButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
@@ -264,6 +265,18 @@ public class SwiftElegantDropdownMenu : UIView {
                 
                 if self.items != nil && self.items!.count > 0 && self.items!.count > self.configuration.dropdownListSelectedItemIndex && self.configuration.dropdownListSelectedItemIndex >= 0 {
                     
+                    if let title = self.title {
+                        
+                        if self.items!.contains(title) {
+                            
+                            if let selectedIndex = self.items!.indexOf(title) {
+                                self.configuration.dropdownListSelectedItemIndex = selectedIndex
+                            }
+                            
+                        }
+                        
+                    }
+                    
                     self._dropdownList?.selectRowAtIndexPath(NSIndexPath(forRow: self.configuration.dropdownListSelectedItemIndex, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
                     
                     self.title = self.items![self.configuration.dropdownListSelectedItemIndex]
@@ -275,14 +288,14 @@ public class SwiftElegantDropdownMenu : UIView {
                 self._dropdownList?.separatorInset = UIEdgeInsetsZero
                 self._dropdownList?.layoutMargins = UIEdgeInsetsZero
                 
-               // self._dropdownList?.separatorInset.right = (self._dropdownList?.separatorInset.left)!
+                // self._dropdownList?.separatorInset.right = (self._dropdownList?.separatorInset.left)!
                 
                 self._dropdownListWrapper?.addSubview(self._dropdownList!)
                 self._topBorder = UIView(frame: CGRectMake(0, 0, self._dropdownListWrapper!.frame.width, 0.5))
                 self._topBorder?.hidden = true
                 self._dropdownListWrapper?.addSubview(self._topBorder!)
                 
-                self._dropdownList?.flashScrollIndicators()
+            
                 
             }
         }
@@ -378,14 +391,21 @@ public class SwiftElegantDropdownMenu : UIView {
     
     private func toggleList(){
         
-        if self._dropdownList!.hidden {
-            self.showList()
+        if let dropdownList = self._dropdownList {
+            
+            if dropdownList.hidden {
+                self.showList()
+            } else {
+                self.hideList()
+            }
+            
         } else {
-            self.hideList()
+            
+            self.renderList()
+            self.showList()
+            
         }
-        
     }
-    
 }
 
 //defines the looks and feels of the dropdown
