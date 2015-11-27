@@ -30,6 +30,7 @@ This component provides an easy, configurable dropdown menu with the ability to 
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
+  s.screenshots = ['https://raw.githubusercontent.com/arminlikic/SwiftElegantDropdownMenu/master/Assets/demo.gif']
   s.resource_bundles = {
     'SwiftElegantDropdownMenu' => ['Pod/Assets/*.png']
   }
