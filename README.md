@@ -1,5 +1,6 @@
 # SwiftElegantDropdownMenu
 
+[![Build Status](https://travis-ci.org/arminlikic/SwiftElegantDropdownMenu.svg)](https://travis-ci.org/arminlikic/SwiftElegantDropdownMenu)
 [![Version](https://img.shields.io/cocoapods/v/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
 [![License](https://img.shields.io/cocoapods/l/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftElegantDropdownMenu.svg?style=flat)](http://cocoapods.org/pods/SwiftElegantDropdownMenu)
