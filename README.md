@@ -61,6 +61,16 @@ self.dropdownMenu.onItemSelect = {
 
 }
 ```
+You can handle what happens when the menu button is tapped:
+```swift
+self.dropdownMenu.onMenuButtonTapped = {
+
+willOpen -> () in
+
+// do something
+
+}
+
 Also, you have the freedom to customize the layout of the dropdown to match your needs:
 ```swift
 ...
