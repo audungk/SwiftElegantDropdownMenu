@@ -88,10 +88,12 @@ self.dropdownMenu.configuration.cellFont = UIFont(name: "Courier New", size: 18)
 
 ## Changelog
 
+**0.1.6 (11-28-2015)**
+- Fixed vertical position issue for list.
+
 **0.1.5 (11-28-2015)**
 - Fixed a crash issue.
 - Added an **onMenuButtonTapped** handler.
-- Fixed vertical position issue for list.
 
 **0.1.4 (11-28-2015)**
 - Improved the dropdown to handle the case when there are multiple dropdowns present.
