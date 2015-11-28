@@ -26,6 +26,11 @@ pod "SwiftElegantDropdownMenu"
 ```
 
 ## Usage:
+
+```swift
+import SwiftElegantDropdownMenu
+```
+
 ### Example 1
 Start by creating an array of **dropdown elements**:
 ```swift
@@ -61,6 +66,17 @@ self.dropdownMenu.onItemSelect = {
 
 }
 ```
+You can handle what happens when the menu button is tapped:
+```swift
+self.dropdownMenu.onMenuButtonTapped = {
+
+willOpen -> () in
+
+// do something
+
+}
+```
+
 Also, you have the freedom to customize the layout of the dropdown to match your needs:
 ```swift
 ...
@@ -71,6 +87,11 @@ self.dropdownMenu.configuration.cellFont = UIFont(name: "Courier New", size: 18)
 ```
 
 ## Changelog
+
+**0.1.5 (11-28-2015)**
+- Fixed a crash issue.
+- Added an **onMenuButtonTapped** handler.
+- Fixed vertical position issue for list.
 
 **0.1.4 (11-28-2015)**
 - Improved the dropdown to handle the case when there are multiple dropdowns present.
