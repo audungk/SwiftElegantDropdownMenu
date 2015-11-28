@@ -72,6 +72,10 @@ self.dropdownMenu.configuration.cellFont = UIFont(name: "Courier New", size: 18)
 
 ## Changelog
 
+**0.1.4 (11-28-2015)**
+- Improved the dropdown to handle the case when there are multiple dropdowns present.
+- Added the ability to close the dropdown by tapping on the outter area.
+
 **0.1.3 (11-27-2015)**
 - The issue that was causing the app to crash when multiple dropdowns have been added on the view has been resolved.
 
