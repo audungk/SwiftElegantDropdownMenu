@@ -26,6 +26,11 @@ pod "SwiftElegantDropdownMenu"
 ```
 
 ## Usage:
+
+```swift
+import SwiftElegantDropdownMenu
+```
+
 ### Example 1
 Start by creating an array of **dropdown elements**:
 ```swift
@@ -70,6 +75,7 @@ willOpen -> () in
 // do something
 
 }
+```
 
 Also, you have the freedom to customize the layout of the dropdown to match your needs:
 ```swift
