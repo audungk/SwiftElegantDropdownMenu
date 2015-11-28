@@ -153,7 +153,8 @@ public class SwiftElegantDropdownMenu : UIView {
         
         if let wrapper = self.wrapper {
             
-            var verticalOffset = self.frame.origin.y + self.frame.size.height
+            let positionInWindow = self.convertRect(self.bounds, toView: nil)
+            var verticalOffset = positionInWindow.origin.y + self.frame.size.height
             
             if !UIApplication.sharedApplication().statusBarHidden {
                 verticalOffset += 20
