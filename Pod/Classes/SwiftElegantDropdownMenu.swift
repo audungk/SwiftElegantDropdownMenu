@@ -45,6 +45,7 @@ public class SwiftElegantDropdownMenu : UIView {
     private var _dropdownIcon: UIImageView?
     
     public var onItemSelect: ((index: Int, item: AnyObject?) -> ())?
+    public var onMenuButtonTapped: ((willOpen: Bool) -> ())?
     
     public var items : [String]? {
         get {
@@ -238,11 +239,22 @@ public class SwiftElegantDropdownMenu : UIView {
             
         }
         
+        if let handler = self.onMenuButtonTapped {
+            
+            if let dropdownList = self._dropdownList {
+                
+                handler(willOpen: dropdownList.hidden)
+                
+            }
+            
+        }
+        
         self.toggleList()
+        
     }
     
     private func renderList(){
-        if self._dropdownList == nil {
+        if self._dropdownList == nil && self.items != nil {
             if self.wrapper == nil {
                 var wrapper = self.superview
                 
@@ -256,7 +268,8 @@ public class SwiftElegantDropdownMenu : UIView {
             
             if let wrapper = self.wrapper {
                 
-                var verticalOffset = self.frame.origin.y + self.frame.size.height
+                let positionInWindow = self.convertRect(self.bounds, toView: nil)
+                var verticalOffset = positionInWindow.origin.y + self.frame.size.height
                 
                 if !UIApplication.sharedApplication().statusBarHidden {
                     
