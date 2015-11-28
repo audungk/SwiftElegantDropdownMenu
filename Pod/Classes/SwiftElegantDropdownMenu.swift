@@ -125,7 +125,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
         
         self.renderDropdownView()
-        
+        self.registerDropdown()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -134,6 +134,15 @@ public class SwiftElegantDropdownMenu : UIView {
         super.init(coder: aDecoder)
         self._configuration = SwiftElegantDropdownMenuConfiguration.getDefaultConfiguration(self)
         self.renderDropdownView()
+        self.registerDropdown()
+        
+    }
+    
+    private func registerDropdown(){
+        
+        if !SwiftElegantDropdownMenuObserverList.instances.contains(self){
+            SwiftElegantDropdownMenuObserverList.instances.append(self)
+        }
         
     }
     
@@ -218,6 +227,17 @@ public class SwiftElegantDropdownMenu : UIView {
     }
     
     func menuButtonTapped(sender: UIButton){
+        
+        for menu in SwiftElegantDropdownMenuObserverList.instances {
+            
+            if menu != self {
+                
+                menu.hideList()
+                
+            }
+            
+        }
+        
         self.toggleList()
     }
     
@@ -246,6 +266,7 @@ public class SwiftElegantDropdownMenu : UIView {
                 let wrapperFrame = CGRectMake(wrapper.frame.origin.x, verticalOffset, wrapper.frame.size.width, wrapper.frame.size.height)
                 self._dropdownListWrapper = SwiftElegantDropdownListWrapperView(frame: wrapperFrame)
                 self._dropdownListWrapper?.clipsToBounds = true
+                self._dropdownListWrapper?.context = self
                 
                 wrapper.addSubview(self._dropdownListWrapper!)
                 
@@ -801,9 +822,22 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
     
 }
 
+class SwiftElegantDropdownMenuObserverList {
+    
+    static var instances = [SwiftElegantDropdownMenu]()
+    
+}
+
 class SwiftElegantDropdownListWrapperView: UIView {
     
+    internal var context: SwiftElegantDropdownMenu?
+    
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+        
+        /*if let context = self.context {
+            context.hideList()
+        }*/
+        
         for subview in subviews {
             if !subview.hidden && subview.alpha > 0 && subview.userInteractionEnabled && subview.pointInside(convertPoint(point, toView: subview), withEvent: event) {
                 return true
