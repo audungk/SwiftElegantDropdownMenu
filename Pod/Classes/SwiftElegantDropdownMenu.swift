@@ -30,24 +30,24 @@
 
 import UIKit
 
-public class SwiftElegantDropdownMenu : UIView {
+open class SwiftElegantDropdownMenu : UIView {
     
-    private var _configuration  : SwiftElegantDropdownMenuConfiguration?
-    private var _title : UILabel?
-    private var _items: [String]?
-    private var _titleText: String!
-    private var _menuButton: UIButton!
-    private var wrapper : UIView? //view in which you wish to present the dropdown
-    private var _dropdownList : SwiftElegantDropdownListTableView?
-    private var _dropdownListWrapper: SwiftElegantDropdownListWrapperView?
-    private var _topBorder : UIView?
-    private var _selectedItem: String?
-    private var _dropdownIcon: UIImageView?
+    fileprivate var _configuration  : SwiftElegantDropdownMenuConfiguration?
+    fileprivate var _title : UILabel?
+    fileprivate var _items: [String]?
+    fileprivate var _titleText: String!
+    fileprivate var _menuButton: UIButton!
+    fileprivate var wrapper : UIView? //view in which you wish to present the dropdown
+    fileprivate var _dropdownList : SwiftElegantDropdownListTableView?
+    fileprivate var _dropdownListWrapper: SwiftElegantDropdownListWrapperView?
+    fileprivate var _topBorder : UIView?
+    fileprivate var _selectedItem: String?
+    fileprivate var _dropdownIcon: UIImageView?
     
-    public var onItemSelect: ((index: Int, item: AnyObject?) -> ())?
-    public var onMenuButtonTapped: ((willOpen: Bool) -> ())?
+    open var onItemSelect: ((_ index: Int, _ item: AnyObject?) -> ())?
+    open var onMenuButtonTapped: ((_ willOpen: Bool) -> ())?
     
-    public var items : [String]? {
+    open var items : [String]? {
         get {
             return self._items
         } set (value) {
@@ -56,7 +56,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
     }
     
-    public var configuration : SwiftElegantDropdownMenuConfiguration! {
+    open var configuration : SwiftElegantDropdownMenuConfiguration! {
         get {
             return self._configuration
         } set(value){
@@ -65,7 +65,7 @@ public class SwiftElegantDropdownMenu : UIView {
         }
     }
     
-    public var title: String? {
+    open var title: String? {
         get {
             return self._titleText
         } set(value) {
@@ -111,7 +111,7 @@ public class SwiftElegantDropdownMenu : UIView {
         self._titleText = title
         self._items = items
         
-        var _frame = CGRectMake(0, 0, 300, 100)
+        var _frame = CGRect(x: 0, y: 0, width: 300, height: 100)
         
         if let frame = frame {
             _frame = frame
@@ -139,7 +139,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    private func registerDropdown(){
+    fileprivate func registerDropdown(){
         
         if !SwiftElegantDropdownMenuObserverList.instances.contains(self){
             SwiftElegantDropdownMenuObserverList.instances.append(self)
@@ -147,16 +147,16 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    override public func setNeedsLayout() {
+    override open func setNeedsLayout() {
         
         super.setNeedsLayout()
         
         if let wrapper = self.wrapper {
             
-            let positionInWindow = self.convertRect(self.bounds, toView: nil)
+            let positionInWindow = self.convert(self.bounds, to: nil)
             var verticalOffset = positionInWindow.origin.y + self.frame.size.height
             
-            if !UIApplication.sharedApplication().statusBarHidden {
+            if !UIApplication.shared.isStatusBarHidden {
                 verticalOffset += 20
             }
             
@@ -171,30 +171,30 @@ public class SwiftElegantDropdownMenu : UIView {
     }
     
     //renders the dropdown view
-    public func renderDropdownView() {
+    open func renderDropdownView() {
         
         if let _title = self._title {
-            if _title.isDescendantOfView(self){
+            if _title.isDescendant(of: self){
                 _title.removeFromSuperview()
             }
         }
         
-        let buttonFrame = CGRectMake(0, 0, self.frame.width, self.frame.height)
+        let buttonFrame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         
         self._title = UILabel(frame: buttonFrame)
         self._title!.text = self._titleText
-        self._title!.textAlignment = NSTextAlignment.Center
+        self._title!.textAlignment = NSTextAlignment.center
         self._title!.font = self.configuration.titleFont
         self._title!.textColor = self.configuration.titleColor
         self._title?.backgroundColor = self.configuration.headerBackgroundColor
         
         if let headerViewHeight = self.configuration.headerViewHeight {
-            self._title?.frame = CGRectMake(self._title!.frame.origin.x, self._title!.frame.origin.y, self._title!.frame.size.width, headerViewHeight)
+            self._title?.frame = CGRect(x: self._title!.frame.origin.x, y: self._title!.frame.origin.y, width: self._title!.frame.size.width, height: headerViewHeight)
         }
         
-        self._title?.frame.size.width = (self._title!.text! as NSString).sizeWithAttributes([NSFontAttributeName:self._title!.font]).width
+        self._title?.frame.size.width = (self._title!.text! as NSString).size(attributes: [NSFontAttributeName:self._title!.font]).width
         
-        self._title?.center = CGPointMake(self.frame.width / 2, self._title!.frame.height / 2)
+        self._title?.center = CGPoint(x: self.frame.width / 2, y: self._title!.frame.height / 2)
         
         self._menuButton = UIButton(frame: buttonFrame)
         
@@ -206,7 +206,7 @@ public class SwiftElegantDropdownMenu : UIView {
             
             if self._dropdownIcon == nil {
                 
-                self._dropdownIcon = UIImageView(frame: CGRectMake(self._title!.frame.origin.x + self._title!.frame.size.width, 0, 30, 30))
+                self._dropdownIcon = UIImageView(frame: CGRect(x: self._title!.frame.origin.x + self._title!.frame.size.width, y: 0, width: 30, height: 30))
                 self._dropdownIcon?.image = dropdownIcon
                 
                 self._menuButton.addSubview(self._dropdownIcon!)
@@ -224,11 +224,11 @@ public class SwiftElegantDropdownMenu : UIView {
         }
         
         self.setNeedsLayout()
-        self._menuButton.addTarget(self, action: "menuButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        self._menuButton.addTarget(self, action: #selector(SwiftElegantDropdownMenu.menuButtonTapped(_:)), for: UIControlEvents.touchUpInside)
         
     }
     
-    func menuButtonTapped(sender: UIButton){
+    func menuButtonTapped(_ sender: UIButton){
         
         for menu in SwiftElegantDropdownMenuObserverList.instances {
             
@@ -244,7 +244,7 @@ public class SwiftElegantDropdownMenu : UIView {
             
             if let dropdownList = self._dropdownList {
                 
-                handler(willOpen: dropdownList.hidden)
+                handler(dropdownList.isHidden)
                 
             }
             
@@ -254,7 +254,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    private func renderList(){
+    fileprivate func renderList(){
         if self._dropdownList == nil && self.items != nil {
             if self.wrapper == nil {
                 var wrapper = self.superview
@@ -269,30 +269,30 @@ public class SwiftElegantDropdownMenu : UIView {
             
             if let wrapper = self.wrapper {
                 
-                let positionInWindow = self.convertRect(self.bounds, toView: nil)
+                let positionInWindow = self.convert(self.bounds, to: nil)
                 var verticalOffset = positionInWindow.origin.y + self.frame.size.height
                 
-                if !UIApplication.sharedApplication().statusBarHidden {
+                if !UIApplication.shared.isStatusBarHidden {
                     
                     verticalOffset += 20
                 }
                 
-                let wrapperFrame = CGRectMake(wrapper.frame.origin.x, verticalOffset, wrapper.frame.size.width, wrapper.frame.size.height)
+                let wrapperFrame = CGRect(x: wrapper.frame.origin.x, y: verticalOffset, width: wrapper.frame.size.width, height: wrapper.frame.size.height)
                 self._dropdownListWrapper = SwiftElegantDropdownListWrapperView(frame: wrapperFrame)
                 self._dropdownListWrapper?.clipsToBounds = true
                 self._dropdownListWrapper?.context = self
                 
                 wrapper.addSubview(self._dropdownListWrapper!)
                 
-                let tableFrame = CGRectMake(wrapper.frame.origin.x, verticalOffset, wrapper.frame.size.width, 0)
+                let tableFrame = CGRect(x: wrapper.frame.origin.x, y: verticalOffset, width: wrapper.frame.size.width, height: 0)
                 
-                self._dropdownList = SwiftElegantDropdownListTableView(frame: tableFrame, style: UITableViewStyle.Plain, items: self.items!, context: self)
+                self._dropdownList = SwiftElegantDropdownListTableView(frame: tableFrame, style: UITableViewStyle.plain, items: self.items!, context: self)
                 
                 self._dropdownList?.itemSelectHandler = { (index: Int, item: AnyObject?) -> () in
                     
                     if let handler = self.onItemSelect {
                         
-                        handler(index: index, item: item)
+                        handler(index, item)
                         
                     }
                     
@@ -304,7 +304,7 @@ public class SwiftElegantDropdownMenu : UIView {
                         
                         if self.items!.contains(title) {
                             
-                            if let selectedIndex = self.items!.indexOf(title) {
+                            if let selectedIndex = self.items!.index(of: title) {
                                 self.configuration.dropdownListSelectedItemIndex = selectedIndex
                             }
                             
@@ -312,22 +312,22 @@ public class SwiftElegantDropdownMenu : UIView {
                         
                     }
                     
-                    self._dropdownList?.selectRowAtIndexPath(NSIndexPath(forRow: self.configuration.dropdownListSelectedItemIndex, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.Top)
+                    self._dropdownList?.selectRow(at: IndexPath(row: self.configuration.dropdownListSelectedItemIndex, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.top)
                     
                     self.title = self.items![self.configuration.dropdownListSelectedItemIndex]
                     
                 }
                 
-                self._dropdownList!.hidden = true
+                self._dropdownList!.isHidden = true
                 
-                self._dropdownList?.separatorInset = UIEdgeInsetsZero
-                self._dropdownList?.layoutMargins = UIEdgeInsetsZero
+                self._dropdownList?.separatorInset = UIEdgeInsets.zero
+                self._dropdownList?.layoutMargins = UIEdgeInsets.zero
                 
                 // self._dropdownList?.separatorInset.right = (self._dropdownList?.separatorInset.left)!
                 
                 self._dropdownListWrapper?.addSubview(self._dropdownList!)
-                self._topBorder = UIView(frame: CGRectMake(0, 0, self._dropdownListWrapper!.frame.width, 0.5))
-                self._topBorder?.hidden = true
+                self._topBorder = UIView(frame: CGRect(x: 0, y: 0, width: self._dropdownListWrapper!.frame.width, height: 0.5))
+                self._topBorder?.isHidden = true
                 self._dropdownListWrapper?.addSubview(self._topBorder!)
                 
             
@@ -335,21 +335,21 @@ public class SwiftElegantDropdownMenu : UIView {
             }
         }
         
-        if let configuration = self.configuration, dropdownList = self._dropdownList {
+        if let configuration = self.configuration, let dropdownList = self._dropdownList {
             dropdownList.backgroundColor = configuration.dropdownListBackgroundColor
             dropdownList.layer.borderWidth = configuration.dropdownListBorderWidth
-            dropdownList.layer.borderColor = configuration.dropdownListBorderColor.CGColor
+            dropdownList.layer.borderColor = configuration.dropdownListBorderColor.cgColor
             self._topBorder?.backgroundColor = configuration.dropdownListBorderColor
         }
         
     }
     
-    private func showList(){
+    fileprivate func showList(){
         
         if !self._dropdownList!.isAnimating {
             
-            self._dropdownList!.frame = CGRectMake(0, -self._dropdownList!.frame.height, self._dropdownList!.frame.width, self._dropdownList!.frame.height)
-            self._dropdownList?.hidden = false
+            self._dropdownList!.frame = CGRect(x: 0, y: -self._dropdownList!.frame.height, width: self._dropdownList!.frame.width, height: self._dropdownList!.frame.height)
+            self._dropdownList?.isHidden = false
             
             if self._dropdownList!.frame.height > self.configuration.dropdownListMaxHeight {
                 
@@ -361,23 +361,23 @@ public class SwiftElegantDropdownMenu : UIView {
                 
                 self._dropdownList?.isAnimating = true
                 
-                self._topBorder?.hidden = false
+                self._topBorder?.isHidden = false
                 
-                UIView.animateWithDuration(configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                UIView.animate(withDuration: configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
                     
                     if let dropdownIcon = self._dropdownIcon {
                         if configuration.dropdownIconWillRotate {
                             
-                            dropdownIcon.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+                            dropdownIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
                             
                         }
                     }
                     
-                    self._dropdownList?.frame = CGRectMake(0, 30, self._dropdownList!.frame.width, self._dropdownList!.frame.height)
+                    self._dropdownList?.frame = CGRect(x: 0, y: 30, width: self._dropdownList!.frame.width, height: self._dropdownList!.frame.height)
                     }, completion: { (completed) -> Void in
                         
-                        UIView.animateWithDuration(configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-                            self._dropdownList?.frame = CGRectMake(0, 0, self._dropdownList!.frame.width, self._dropdownList!.frame.height)
+                        UIView.animate(withDuration: configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+                            self._dropdownList?.frame = CGRect(x: 0, y: 0, width: self._dropdownList!.frame.width, height: self._dropdownList!.frame.height)
                             }, completion: { (completed) -> Void in
                                 self._dropdownList?.isAnimating = false
                         })
@@ -389,7 +389,7 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    private func hideList(){
+    fileprivate func hideList(){
         
         if !self._dropdownList!.isAnimating {
             
@@ -397,23 +397,23 @@ public class SwiftElegantDropdownMenu : UIView {
                 
                 self._dropdownList?.isAnimating = true
                 
-                UIView.animateWithDuration(configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+                UIView.animate(withDuration: configuration.animationDuration, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
                     
                     if let dropdownIcon = self._dropdownIcon {
                         if configuration.dropdownIconWillRotate {
                             
-                            dropdownIcon.transform = CGAffineTransformMakeRotation(CGFloat(0))
+                            dropdownIcon.transform = CGAffineTransform(rotationAngle: CGFloat(0))
                             
                         }
                     }
                     
-                    self._dropdownList?.frame = CGRectMake(0, -self._dropdownList!.frame.height, self._dropdownList!.frame.width, self._dropdownList!.frame.height)
+                    self._dropdownList?.frame = CGRect(x: 0, y: -self._dropdownList!.frame.height, width: self._dropdownList!.frame.width, height: self._dropdownList!.frame.height)
                     }, completion: { (completed) -> Void in
                         if completed {
                             
                             self._dropdownList?.isAnimating = false
-                            self._dropdownList?.hidden = true
-                            self._topBorder?.hidden = true
+                            self._dropdownList?.isHidden = true
+                            self._topBorder?.isHidden = true
                             
                         }
                 })
@@ -424,11 +424,11 @@ public class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    private func toggleList(){
+    fileprivate func toggleList(){
         
         if let dropdownList = self._dropdownList {
             
-            if dropdownList.hidden {
+            if dropdownList.isHidden {
                 self.showList()
             } else {
                 self.hideList()
@@ -444,62 +444,62 @@ public class SwiftElegantDropdownMenu : UIView {
 }
 
 //defines the looks and feels of the dropdown
-public class SwiftElegantDropdownMenuConfiguration {
+open class SwiftElegantDropdownMenuConfiguration {
     
-    private var context : SwiftElegantDropdownMenu?
+    fileprivate var context : SwiftElegantDropdownMenu?
     
     //attributes for the header of the dropdown
-    private var _headerBackgroundColor: UIColor!
-    private var _headerViewHeight: CGFloat?
+    fileprivate var _headerBackgroundColor: UIColor!
+    fileprivate var _headerViewHeight: CGFloat?
     
     //attributes for the title (selected item)
-    private var _titleColor : UIColor!
-    private var _titleFont: UIFont!
+    fileprivate var _titleColor : UIColor!
+    fileprivate var _titleFont: UIFont!
     
     //attributes for the dropdown list items
-    private var _cellHeight : CGFloat!
-    private var _dropdownListBackgroundColor: UIColor!
-    private var _cellFont: UIFont!
-    private var _cellTextColor : UIColor!
-    private var _dropdownListBorderColor: UIColor!
-    private var _dropdownListBorderWidth: CGFloat!
-    private var _dropdownListMaxHeight: CGFloat!
-    private var _dropdownListSelectedItemIndex: Int!
-    private var _dropdownListSelectedItemBackgroundColor: UIColor!
-    private var _dropdownListSelectedItemAccessoryType : UITableViewCellAccessoryType!
+    fileprivate var _cellHeight : CGFloat!
+    fileprivate var _dropdownListBackgroundColor: UIColor!
+    fileprivate var _cellFont: UIFont!
+    fileprivate var _cellTextColor : UIColor!
+    fileprivate var _dropdownListBorderColor: UIColor!
+    fileprivate var _dropdownListBorderWidth: CGFloat!
+    fileprivate var _dropdownListMaxHeight: CGFloat!
+    fileprivate var _dropdownListSelectedItemIndex: Int!
+    fileprivate var _dropdownListSelectedItemBackgroundColor: UIColor!
+    fileprivate var _dropdownListSelectedItemAccessoryType : UITableViewCellAccessoryType!
     
     //animations
-    private var _animationDuration : NSTimeInterval!
+    fileprivate var _animationDuration : TimeInterval!
     
     //dropdown icon
-    private var _dropdownIconAssetName: String?
-    private var _dropdownIconWillRotate: Bool!
+    fileprivate var _dropdownIconAssetName: String?
+    fileprivate var _dropdownIconWillRotate: Bool!
     
     //returns a prepopulated configuration set
-    static public func getDefaultConfiguration(context: SwiftElegantDropdownMenu) -> SwiftElegantDropdownMenuConfiguration{
+    static open func getDefaultConfiguration(_ context: SwiftElegantDropdownMenu) -> SwiftElegantDropdownMenuConfiguration{
         
         let configuration = SwiftElegantDropdownMenuConfiguration(context: context)
         
-        configuration.headerBackgroundColor = UIColor.clearColor()
+        configuration.headerBackgroundColor = UIColor.clear
         
-        configuration.titleColor = UIColor.blackColor()
+        configuration.titleColor = UIColor.black
         configuration.titleFont = UIFont(name: "HelveticaNeue", size: 17)!
         
         configuration.cellHeight = 40
         configuration.animationDuration = 0.3
         
         configuration.cellFont = UIFont(name: "HelveticaNeue", size: 17)!
-        configuration.cellTextColor = UIColor.blackColor()
+        configuration.cellTextColor = UIColor.black
         
-        configuration.dropdownListBackgroundColor = UIColor.whiteColor()
-        configuration.dropdownListBorderColor = UIColor.lightGrayColor()
+        configuration.dropdownListBackgroundColor = UIColor.white
+        configuration.dropdownListBorderColor = UIColor.lightGray
         configuration.dropdownListBorderWidth = 0.5
         
         configuration.dropdownListMaxHeight = 200
         configuration.dropdownListSelectedItemIndex = 0
         
         configuration.dropdownListSelectedItemBackgroundColor = UIColor(red: 211/255, green: 234/255, blue: 242/255, alpha: 1.0)
-        configuration.dropdownListSelectedItemAccessoryType = UITableViewCellAccessoryType.Checkmark
+        configuration.dropdownListSelectedItemAccessoryType = UITableViewCellAccessoryType.checkmark
         
         configuration.dropdownIconAssetName = "arrow"
         configuration.dropdownIconWillRotate = true
@@ -524,7 +524,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._headerBackgroundColor
         } set(value){
             self._headerBackgroundColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -534,7 +534,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._headerViewHeight
         } set(value){
             self._headerViewHeight = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -546,7 +546,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._titleColor
         } set(value) {
             self._titleColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -556,7 +556,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._titleFont
         } set(value){
             self._titleFont = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -568,17 +568,17 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._cellHeight
         } set(value){
             self._cellHeight = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
     }
-    public var animationDuration: NSTimeInterval {
+    public var animationDuration: TimeInterval {
         get {
             return self._animationDuration
         } set(value){
             self._animationDuration = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -588,7 +588,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListBackgroundColor
         } set(value){
             self._dropdownListBackgroundColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -598,7 +598,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._cellFont
         } set(value){
             self._cellFont = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -608,7 +608,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._cellTextColor
         } set(value){
             self._cellTextColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -618,7 +618,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListBorderColor
         } set(value){
             self._dropdownListBorderColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -628,7 +628,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListBorderWidth
         } set(value){
             self._dropdownListBorderWidth = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -638,7 +638,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListMaxHeight
         } set(value){
             self._dropdownListMaxHeight = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -648,7 +648,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListSelectedItemIndex
         } set(value){
             self._dropdownListSelectedItemIndex = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -658,7 +658,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListSelectedItemBackgroundColor
         } set(value){
             self._dropdownListSelectedItemBackgroundColor = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -668,7 +668,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownListSelectedItemAccessoryType
         } set(value){
             self._dropdownListSelectedItemAccessoryType = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -680,7 +680,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownIconAssetName
         } set(value){
             self._dropdownIconAssetName = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -691,7 +691,7 @@ extension SwiftElegantDropdownMenuConfiguration {
             return self._dropdownIconWillRotate
         } set(value){
             self._dropdownIconWillRotate = value
-            if let context = self.context, _ = context.configuration {
+            if let context = self.context, let _ = context.configuration {
                 context.renderDropdownView()
             }
         }
@@ -707,9 +707,10 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
     
     var isAnimating = false
     
-    var itemSelectHandler: ((index: Int, item: AnyObject?) -> ())?
+    var itemSelectHandler: ((_ index: Int, _ item: AnyObject?) -> ())?
     
-    convenience init(var frame: CGRect, style: UITableViewStyle, items: [String], context: SwiftElegantDropdownMenu) {
+    convenience init(frame: CGRect, style: UITableViewStyle, items: [String], context: SwiftElegantDropdownMenu) {
+        var frame = frame
         
         var frameHeight = frame.size.height
         var rowHeight : CGFloat = 0
@@ -726,7 +727,7 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
             
         }
         
-        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frameHeight)
+        frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: frameHeight)
         
         self.init(frame: frame, style: style)
         
@@ -737,7 +738,7 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
         self.delegate = self
         self.dataSource = self
         
-        self.scrollEnabled = true
+        self.isScrollEnabled = true
         
     }
     
@@ -749,7 +750,7 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
         super.init(coder: aDecoder)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if let context = self.context {
             if let configuration = context.configuration {
@@ -763,38 +764,38 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedItem = self.items![indexPath.row]
+        let selectedItem = self.items![(indexPath as NSIndexPath).row]
         self.context?.title = selectedItem
         self.context?.hideList()
         
         //upon selection add the according selection style
-        tableView.cellForRowAtIndexPath(indexPath)?.backgroundColor = self.context?.configuration.dropdownListSelectedItemBackgroundColor
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = self.context!.configuration.dropdownListSelectedItemAccessoryType
+        tableView.cellForRow(at: indexPath)?.backgroundColor = self.context?.configuration.dropdownListSelectedItemBackgroundColor
+        tableView.cellForRow(at: indexPath)?.accessoryType = self.context!.configuration.dropdownListSelectedItemAccessoryType
         
         if let handler = self.itemSelectHandler {
             
-            handler(index: indexPath.row, item: selectedItem)
+            handler((indexPath as NSIndexPath).row, selectedItem as AnyObject?)
             
         }
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.items?.count)!
     }
     
     
     //if the next row to be selected is not the same as the present one, remove any selection indicators
-    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         let currentIndexPath = tableView.indexPathForSelectedRow
         
         if currentIndexPath != nil {
             
-            tableView.cellForRowAtIndexPath(currentIndexPath!)?.backgroundColor = self.context?.configuration.dropdownListBackgroundColor
-            tableView.cellForRowAtIndexPath(currentIndexPath!)?.accessoryType = UITableViewCellAccessoryType.None
+            tableView.cellForRow(at: currentIndexPath!)?.backgroundColor = self.context?.configuration.dropdownListBackgroundColor
+            tableView.cellForRow(at: currentIndexPath!)?.accessoryType = UITableViewCellAccessoryType.none
             
         }
         
@@ -802,10 +803,10 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = SwiftElegantDropdownListTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = SwiftElegantDropdownListTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = self.items![indexPath.row]
+        cell.textLabel?.text = self.items![(indexPath as NSIndexPath).row]
         
         if let context = self.context {
             if let configuration = context.configuration {
@@ -820,12 +821,12 @@ class SwiftElegantDropdownListTableView : UITableView, UITableViewDelegate, UITa
     }
     
     //on first cell rendering, if the cell is marked as selected proceed with adding the according style
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.layoutMargins = UIEdgeInsets.zero
         
-        if cell.selected {
+        if cell.isSelected {
             
             cell.backgroundColor = self.context?.configuration.dropdownListSelectedItemBackgroundColor
             cell.accessoryType = self.context!.configuration.dropdownListSelectedItemAccessoryType
@@ -846,14 +847,14 @@ class SwiftElegantDropdownListWrapperView: UIView {
     
     internal var context: SwiftElegantDropdownMenu?
     
-    override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         
         /*if let context = self.context {
             context.hideList()
         }*/
         
         for subview in subviews {
-            if !subview.hidden && subview.alpha > 0 && subview.userInteractionEnabled && subview.pointInside(convertPoint(point, toView: subview), withEvent: event) {
+            if !subview.isHidden && subview.alpha > 0 && subview.isUserInteractionEnabled && subview.point(inside: convert(point, to: subview), with: event) {
                 return true
             }
         }
@@ -866,12 +867,12 @@ class SwiftElegantDropdownListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
 }

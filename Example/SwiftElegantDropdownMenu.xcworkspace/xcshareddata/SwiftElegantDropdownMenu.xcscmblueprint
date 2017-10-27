@@ -8,7 +8,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5BFD29D0-B74D-451F-898A-6DCD83605367",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "5BDB1F066851304904D89814B2409CDFD9F4D44D" : "",
+    "5BDB1F066851304904D89814B2409CDFD9F4D44D" : "SwiftElegantDropdownMenu\/",
     "BDB62BFDD6E16C985A0D9A44B91D57199AED6558" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftElegantDropdownMenu",
