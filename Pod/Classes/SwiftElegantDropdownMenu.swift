@@ -192,7 +192,7 @@ open class SwiftElegantDropdownMenu : UIView {
             self._title?.frame = CGRect(x: self._title!.frame.origin.x, y: self._title!.frame.origin.y, width: self._title!.frame.size.width, height: headerViewHeight)
         }
         
-        self._title?.frame.size.width = (self._title!.text! as NSString).size(attributes: [NSFontAttributeName:self._title!.font]).width
+        self._title?.frame.size.width = (self._title!.text! as NSString).size(withAttributes: [NSAttributedStringKey.font:self._title!.font]).width
         
         self._title?.center = CGPoint(x: self.frame.width / 2, y: self._title!.frame.height / 2)
         
@@ -228,7 +228,7 @@ open class SwiftElegantDropdownMenu : UIView {
         
     }
     
-    func menuButtonTapped(_ sender: UIButton){
+    @objc func menuButtonTapped(_ sender: UIButton){
         
         for menu in SwiftElegantDropdownMenuObserverList.instances {
             
